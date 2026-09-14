@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday ❤️</title>
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: #fff;
+            background: #0b0710;
+            overflow-x: hidden;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(255, 105, 170, 0.18),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 85% 70%,
+                    rgba(170, 90, 255, 0.15),
+                    transparent 30%
+                ),
+
+                #0b0710;
+        }
+
+
+        /* =========================
+           NOISE EFFECT
+        ========================= */
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.035;
+            z-index: 50;
+
+            background-image:
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+        }
+
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
+
+        .floating-hearts {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 5;
+        }
+
+        .floating-hearts span {
+            position: absolute;
+            bottom: -50px;
+
+            font-size: 18px;
+            opacity: 0;
+
+            animation: heartFloat linear infinite;
+        }
+
+        .floating-hearts span:nth-child(1) {
+            left: 8%;
+            animation-duration: 10s;
+            animation-delay: 1s;
+        }
+
+        .floating-hearts span:nth-child(2) {
+            left: 25%;
+            animation-duration: 13s;
+            animation-delay: 4s;
+        }
+
+        .floating-hearts span:nth-child(3) {
+            left: 45%;
+            animation-duration: 11s;
+            animation-delay: 2s;
+        }
+
+        .floating-hearts span:nth-child(4) {
+            left: 65%;
+            animation-duration: 14s;
+            animation-delay: 6s;
+        }
+
+        .floating-hearts span:nth-child(5) {
+            left: 82%;
+            animation-duration: 12s;
+            animation-delay: 3s;
+        }
+
+        .floating-hearts span:nth-child(6) {
+            left: 92%;
+            animation-duration: 15s;
+            animation-delay: 7s;
+        }
+
+        @keyframes heartFloat {
+
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.65;
+            }
+
+            80% {
+                opacity: 0.4;
+            }
+
+            100% {
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            background: rgba(255, 75, 160, 0.13);
+
+            filter: blur(100px);
+
+            border-radius: 50%;
+
+            left: -180px;
+            top: 10%;
+        }
+
+        .hero-content {
+            width: min(1100px, 90%);
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+
+            gap: 70px;
+
+            align-items: center;
+
+            position: relative;
+            z-index: 3;
+        }
+
+
+        /* =========================
+           HERO TEXT
+        ========================= */
+
+        .eyebrow {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 9px 15px;
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            border-radius: 50px;
+
+            background: rgba(255,255,255,0.05);
+
+            backdrop-filter: blur(10px);
+
+            color: #ffabc9;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 7vw, 92px);
+
+            line-height: 0.94;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 28px;
+        }
+
+        .hero h1 span {
+            display: block;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff8fbc,
+                    #ffc0d9,
+                    #d29aff
+                );
+
+            -webkit-background-clip: text;
+
+            color: transparent;
+        }
+
+        .hero-description {
+            max-width: 560px;
+
+            color: #bdb2c4;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .primary-btn {
+            border: none;
+
+            padding: 16px 27px;
+
+            border-radius: 50px;
+
+            color: white;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff4f9b,
+                    #b95aff
+                );
+
+            box-shadow:
+                0 15px 40px
+                rgba(255, 75, 160, 0.25);
+
+            transition: 0.3s ease;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 20px 50px
+                rgba(255, 75, 160, 0.4);
+        }
+
+        .primary-btn:active {
+            transform: scale(0.97);
+        }
+
+
+        /* =========================
+           HERO PHOTO
+        ========================= */
+
+        .hero-photo-wrapper {
+            position: relative;
+
+            width: min(420px, 100%);
+
+            margin: auto;
+        }
+
+        .hero-photo-wrapper::before {
+            content: "";
+
+            position: absolute;
+
+            inset: -18px;
+
+            border: 1px solid
+                rgba(255,255,255,0.12);
+
+            border-radius: 35px;
+
+            transform: rotate(5deg);
+        }
+
+        .hero-photo {
+            position: relative;
+
+            padding: 8px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.25),
+                    rgba(255,255,255,0.03)
+                );
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 35px 80px
+                rgba(0,0,0,0.55);
+
+            transform: rotate(2deg);
+
+            transition: 0.5s ease;
+        }
+
+        .hero-photo:hover {
+            transform: rotate(0deg) translateY(-8px);
+        }
+
+        .hero-photo img {
+            height: 530px;
+
+            object-fit: cover;
+
+            object-position: center;
+
+            border-radius: 24px;
+        }
+
+        .photo-label {
+            position: absolute;
+
+            left: -25px;
+            bottom: 30px;
+
+            padding: 14px 20px;
+
+            border-radius: 16px;
+
+            background:
+                rgba(20,12,25,0.85);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            backdrop-filter: blur(15px);
+
+            font-size: 13px;
+
+            color: #f5dce8;
+        }
+
+
+        /* =========================
+           COMMON SECTION
+        ========================= */
+
+        section {
+            padding: 120px 0;
+        }
+
+        .section-header {
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+        .section-label {
+            color: #ff94bf;
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 14px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(38px, 5vw, 60px);
+
+            letter-spacing: -2px;
+
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            max-width: 600px;
+
+            margin: auto;
+
+            color: #a99eae;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           MESSAGE
+        ========================= */
+
+        #message {
+            display: none;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(255,255,255,0.025),
+                    rgba(255,255,255,0.01)
+                );
+        }
+
+        #message.show {
+            display: block;
+
+            animation: reveal 1s ease;
+        }
+
+        .message-box {
+            max-width: 760px;
+
+            margin: auto;
+
+            padding: 50px 35px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.1);
+
+            backdrop-filter: blur(20px);
+        }
+
+        .message-box h2 {
+            font-size: 42px;
+
+            margin-bottom: 25px;
+        }
+
+        .message-box p {
+            color: #c4b8ca;
+
+            line-height: 2;
+
+            font-size: 17px;
+        }
+
+        .cake {
+            font-size: 75px;
+
+            margin-top: 30px;
+
+            animation: cake 2s ease-in-out infinite;
+        }
+
+        @keyframes cake {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+
+        /* =========================
+           MEMORIES
+        ========================= */
+
+        .memories {
+            background:
+                rgba(255,255,255,0.018);
+        }
+
+        .memory-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+        .memory-card {
+            position: relative;
+
+            padding: 8px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(255,255,255,0.055);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.1);
+
+            backdrop-filter: blur(15px);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.4s ease,
+                background 0.4s ease;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-10px);
+
+            background:
+                rgba(255,255,255,0.085);
+        }
+
+        .memory-photo {
+            height: 390px;
+
+            overflow: hidden;
+
+            border-radius: 19px;
+
+            cursor: pointer;
+        }
+
+        .memory-photo img {
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.6s ease;
+        }
+
+        .memory-card:hover
+        .memory-photo img {
+            transform: scale(1.07);
+        }
+
+        .memory-info {
+            padding: 20px 13px 17px;
+        }
+
+        .memory-number {
+            font-size: 11px;
+
+            color: #ff91bd;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 7px;
+        }
+
+        .memory-info h3 {
+            font-size: 19px;
+
+            margin-bottom: 7px;
+        }
+
+        .memory-info p {
+            color: #9f94a5;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           WISHES
+        ========================= */
+
+        .wishes-grid {
+            max-width: 850px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 14px;
+        }
+
+        .wish {
+            padding: 23px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            color: #ddd2df;
+
+            transition: 0.3s;
+        }
+
+        .wish:hover {
+            transform: translateY(-4px);
+
+            background:
+                rgba(255,255,255,0.075);
+        }
+
+
+        /* =========================
+           FINAL SECTION
+        ========================= */
+
+        .final {
+            text-align: center;
+
+            min-height: 650px;
+
+            display: flex;
+
+            align-items: center;
+        }
+
+        .final-content {
+            width: 100%;
+        }
+
+        .final h2 {
+            font-size: clamp(45px, 6vw, 75px);
+
+            margin-bottom: 30px;
+
+            letter-spacing: -3px;
+        }
+
+        .final-message {
+            display: none;
+
+            max-width: 720px;
+
+            margin: 40px auto 0;
+
+            padding: 45px 30px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,100,170,0.08),
+                    rgba(160,90,255,0.08)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            backdrop-filter: blur(20px);
+        }
+
+        .final-message.show {
+            display: block;
+
+            animation: reveal 0.8s ease;
+        }
+
+        .final-message h3 {
+            font-size: 30px;
+
+            margin-bottom: 18px;
+        }
+
+        .final-message p {
+            color: #c4b8ca;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 35px 20px;
+
+            text-align: center;
+
+            color: #766d7c;
+
+            font-size: 13px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.06);
+        }
+
+
+        /* =========================
+           CONFETTI
+        ========================= */
+
+        .confetti {
+            position: fixed;
+
+            top: -20px;
+
+            width: 8px;
+            height: 13px;
+
+            z-index: 100;
+
+            pointer-events: none;
+
+            animation:
+                confettiFall 3.5s linear forwards;
+        }
+
+        @keyframes confettiFall {
+
+            to {
+                transform:
+                    translateY(110vh)
+                    rotate(720deg);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =========================
+           LIGHTBOX
+        ========================= */
+
+        .lightbox {
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(0,0,0,0.88);
+
+            backdrop-filter: blur(15px);
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            z-index: 200;
+
+            padding: 25px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 88vh;
+
+            width: auto;
+
+            object-fit: contain;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 30px 100px
+                rgba(0,0,0,0.7);
+        }
+
+        .close-lightbox {
+            position: absolute;
+
+            top: 25px;
+            right: 30px;
+
+            width: 45px;
+            height: 45px;
+
+            border-radius: 50%;
+
+            border: 1px solid
+                rgba(255,255,255,0.2);
+
+            background:
+                rgba(255,255,255,0.08);
+
+            color: white;
+
+            font-size: 25px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           REVEAL ANIMATION
+        ========================= */
+
+        @keyframes reveal {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .hero {
+                padding: 90px 0;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+                gap: 60px;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-photo-wrapper {
+                width: min(390px, 90%);
+            }
+
+            .memory-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .memory-card {
+                max-width: 430px;
+
+                width: 100%;
+
+                margin: auto;
+            }
+
+            .wishes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            section {
+                padding: 85px 0;
+            }
+
+            .hero h1 {
+                font-size: 53px;
+
+                letter-spacing: -3px;
+            }
+
+            .hero-photo img {
+                height: 450px;
+            }
+
+            .photo-label {
+                left: -10px;
+                bottom: 20px;
+            }
+
+            .message-box {
+                padding: 35px 22px;
+            }
+
+            .message-box h2 {
+                font-size: 34px;
+            }
+
+            .message-box p {
+                font-size: 15px;
+            }
+
+            .memory-photo {
+                height: 420px;
+            }
+
+            .final-message {
+                padding: 35px 22px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         FLOATING HEARTS
+    ========================== -->
+
+    <div class="floating-hearts">
+
+        <span>♡</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+
+    </div>
+
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+
+            <div class="hero-text">
+
+                <div class="eyebrow">
+                    ✨ A SPECIAL DAY
+                </div>
+
+
+                <h1>
+                    Happy Birthday
+                    <span>Beauty! ❤️</span>
+                </h1>
+
+
+                <p class="hero-description">
+
+                    Today isn't just another day.
+                    It's the day someone truly special
+                    came into this world. 🎂
+
+                </p>
+
+
+                <button
+                    class="primary-btn"
+                    id="surpriseBtn">
+
+                    Open Your Surprise
+                    🎁
+
+                </button>
+
+            </div>
+
+
+
+            <!-- MAIN PHOTO -->
+
+            <div class="hero-photo-wrapper">
+
+                <div class="hero-photo">
+
+                    <img
+                        src="photo1.png"
+                        alt="Birthday photo">
+
+                    <div class="photo-label">
+
+                        ✨ Simply Beautiful
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MESSAGE
+    ========================== -->
+
+    <section id="message">
+
+        <div class="container">
+
+            <div class="message-box">
+
+                <div class="section-label">
+                    💌 A LITTLE MESSAGE
+                </div>
+
+                <h2>
+                    Happy Birthday! 🎂
+                </h2>
+
+                <p>
+
+                    Wishing you a day filled with happiness,
+                    laughter, beautiful memories and countless
+                    reasons to smile.
+
+                    <br><br>
+
+                    May this new chapter of your life bring
+                    you closer to your dreams and fill your
+                    days with beautiful moments.
+
+                    <br><br>
+
+                    Keep smiling, keep shining,
+                    and always be yourself. ❤️
+
+                </p>
+
+                <div class="cake">
+                    🎂
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MEMORIES
+    ========================== -->
+
+    <section class="memories">
+
+        <div class="container">
+
+
+            <div class="section-header">
+
+                <div class="section-label">
+                    📸 SPECIAL MOMENTS
+                </div>
+
+                <h2>
+                    Beautiful Memories
+                </h2>
+
+                <p>
+                    Three little moments,
+                    but each one has its own story. ✨
+                </p>
+
+            </div>
+
+
+
+            <div class="memory-grid">
+
+
+                <!-- PHOTO 1 -->
+
+                <div class="memory-card">
+
+                    <div class="memory-photo">
+
+                        <img
+                            src="photo1.png"
+                            alt="Beautiful portrait">
+
+                    </div>
+
+                    <div class="memory-info">
+
+                        <div class="memory-number">
+                            MEMORY 01
+                        </div>
+
+                        <h3>
+                            A Beautiful Smile ✨
+                        </h3>
+
+                        <p>
+                            Some pictures don't need
+                            any words.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PHOTO 2 -->
+
+                <div class="memory-card">
+
+                    <div class="memory-photo">
+
+                        <img
+                            src="photo2.png"
+                            alt="Beautiful flowers">
+
+                    </div>
+
+                    <div class="memory-info">
+
+                        <div class="memory-number">
+                            MEMORY 02
+                        </div>
+
+                        <h3>
+                            A Moment of Beauty 🌸
+                        </h3>
+
+                        <p>
+                            Sometimes the simplest moments
+                            become the sweetest memories.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PHOTO 3 -->
+
+                <div class="memory-card">
+
+                    <div class="memory-photo">
+
+                        <img
+                            src="photo3.png"
+                            alt="Beautiful outdoor moment">
+
+                    </div>
+
+                    <div class="memory-info">
+
+                        <div class="memory-number">
+                            MEMORY 03
+                        </div>
+
+                        <h3>
+                            Keep Shining ✨
+                        </h3>
+
+                        <p>
+                            Beautiful moments are meant
+                            to be remembered.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         WISHES
+    ========================== -->
+
+    <section class="wishes">
+
+        <div class="container">
+
+
+            <div class="section-header">
+
+                <div class="section-label">
+                    🌷 BIRTHDAY WISHES
+                </div>
+
+                <h2>
+                    My Wishes For You
+                </h2>
+
+                <p>
+                    A few simple wishes for your
+                    beautiful journey ahead.
+                </p>
+
+            </div>
+
+
+
+            <div class="wishes-grid">
+
+                <div class="wish">
+                    🌷 Stay happy and peaceful
+                </div>
+
+                <div class="wish">
+                    ✨ Keep smiling every day
+                </div>
+
+                <div class="wish">
+                    🎯 Achieve everything you dream of
+                </div>
+
+                <div class="wish">
+                    💫 Keep shining wherever you go
+                </div>
+
+                <div class="wish">
+                    🌸 Create beautiful memories
+                </div>
+
+                <div class="wish">
+                    ❤️ Always stay amazing
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FINAL SURPRISE
+    ========================== -->
+
+    <section class="final">
+
+        <div class="container">
+
+            <div class="final-content">
+
+
+                <div class="section-label">
+                    🎁 ONE LAST SURPRISE
+                </div>
+
+
+                <h2>
+                    One More Thing...
+                </h2>
+
+
+                <button
+                    class="primary-btn"
+                    id="finalBtn">
+
+                    Click Me ❤️
+
+                </button>
+
+
+
+                <div
+                    class="final-message"
+                    id="finalMessage">
+
+                    <h3>
+                        🎉 Happy Birthday! 🎉
+                    </h3>
+
+                    <p>
+
+                        May your life always be filled with
+                        happiness, success, laughter and
+                        beautiful moments.
+
+                        <br><br>
+
+                        May you always have reasons to smile,
+                        people who make you happy and dreams
+                        worth chasing.
+
+                        <br><br>
+
+                        Keep smiling and keep shining! ❤️
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        Made with ❤️ for a Special Birthday
+
+    </footer>
+
+
+
+    <!-- =========================
+         LIGHTBOX
+    ========================== -->
+
+    <div
+        class="lightbox"
+        id="lightbox">
+
+        <button
+            class="close-lightbox"
+            id="closeLightbox">
+
+            ×
+
+        </button>
+
+        <img
+            id="lightboxImage"
+            src=""
+            alt="Full size photo">
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+
+        /* =========================
+           FIRST SURPRISE
+        ========================== */
+
+        const surpriseBtn =
+            document.getElementById("surpriseBtn");
+
+        const message =
+            document.getElementById("message");
+
+
+        surpriseBtn.addEventListener(
+            "click",
+            function () {
+
+                message.classList.add("show");
+
+                message.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+                createConfetti();
+
+            }
+        );
+
+
+
+        /* =========================
+           FINAL SURPRISE
+        ========================== */
+
+        const finalBtn =
+            document.getElementById("finalBtn");
+
+        const finalMessage =
+            document.getElementById("finalMessage");
+
+
+        finalBtn.addEventListener(
+            "click",
+            function () {
+
+                finalMessage.classList.add("show");
+
+                createConfetti();
+
+                setTimeout(
+                    function () {
+
+                        finalMessage.scrollIntoView({
+                            behavior: "smooth",
+                            block: "center"
+                        });
+
+                    },
+                    200
+                );
+
+            }
+        );
+
+
+
+        /* =========================
+           CONFETTI
+        ========================== */
+
+        function createConfetti() {
+
+            const pieces = 100;
+
+
+            for (
+                let i = 0;
+                i < pieces;
+                i++
+            ) {
+
+                const piece =
+                    document.createElement("div");
+
+
+                piece.className =
+                    "confetti";
+
+
+                piece.style.left =
+                    Math.random() * 100 + "vw";
+
+
+                piece.style.animationDuration =
+                    (Math.random() * 2 + 2.5) + "s";
+
+
+                piece.style.animationDelay =
+                    Math.random() * 0.5 + "s";
+
+
+                piece.style.background =
+                    getRandomColor();
+
+
+                piece.style.transform =
+                    `rotate(${Math.random() * 360}deg)`;
+
+
+                document.body.appendChild(piece);
+
+
+                setTimeout(
+                    function () {
+
+                        piece.remove();
+
+                    },
+                    4500
+                );
+
+            }
+
+        }
+
+
+
+        function getRandomColor() {
+
+            const colors = [
+
+                "#ff6fae",
+                "#ffb3d1",
+                "#d28aff",
+                "#ffd166",
+                "#ffffff",
+                "#9ee7ff"
+
+            ];
+
+
+            return colors[
+                Math.floor(
+                    Math.random() * colors.length
+                )
+            ];
+
+        }
+
+
+
+        /* =========================
+           PHOTO LIGHTBOX
+        ========================== */
+
+        const memoryPhotos =
+            document.querySelectorAll(
+                ".memory-photo img"
+            );
+
+        const lightbox =
+            document.getElementById(
+                "lightbox"
+            );
+
+        const lightboxImage =
+            document.getElementById(
+                "lightboxImage"
+            );
+
+        const closeLightbox =
+            document.getElementById(
+                "closeLightbox"
+            );
+
+
+        memoryPhotos.forEach(
+            function (photo) {
+
+                photo.addEventListener(
+                    "click",
+                    function () {
+
+                        lightboxImage.src =
+                            photo.src;
+
+                        lightbox.classList.add(
+                            "active"
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        closeLightbox.addEventListener(
+            "click",
+            function () {
+
+                lightbox.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+        lightbox.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target === lightbox
+                ) {
+
+                    lightbox.classList.remove(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* ESC KEY */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    lightbox.classList.remove(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
